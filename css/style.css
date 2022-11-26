@@ -1,0 +1,490 @@
+/*importation d'une police*/
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,400i,700");
+
+/*définit la police par défaut de la page*/
+html
+{
+    font-family: Montserrat, sans-serif;
+}
+
+/*couleur du corps de la page*/
+body
+{
+    background-color: #EBF9FF;
+}
+
+/*permet les espaces entre les cadres du fond*/
+*,*:before,*:after
+{ 
+  box-sizing:  border-box;
+}
+
+/*retire toutes les marges par défaut de la page*/
+*
+{
+	margin-left:0;
+	margin-right:0;
+	padding:0;
+}
+
+/*modifie le style du titre de la page*/
+h1
+{
+  text-align: center;
+  padding-bottom: 25px;
+  border-bottom: 1px solid #eee;
+  display: block;
+  margin-top: 25px;
+  text-shadow:   -1px -1px 0 #000,  
+  1px -1px 0 #000,
+  -1px 1px 0 #000,
+   1px 1px 0 #000,
+   1px 1px 2px #141414,
+   1px 1px 3px #141414,
+   1px 1px 5px #141414,
+   1px 1px 7px #141414,
+   1px 1px 10px #141414,
+   1px 1px 12px #141414,
+   1px 1px 18px #141414;
+   color:#fff;
+}
+
+/*fond avec les images*/
+.intro
+{ 
+  padding-right: 25px; 
+  padding-left: 25px;
+  padding-bottom: 25px;
+  position: fixed; /*permet de fixer le fond (le rectangle s'affiche par dessus)*/
+}
+
+/*définit le cadre des images*/
+ul
+{
+  column-count: 5; /*définit le nombre de colonne (ici 5)*/
+  column-gap: 10px;/*taille entre les colonnes des images du fond*/
+}
+
+/*modifie le comportement des images du fond pour qu'elles soient plus lisibles si largeur>1000px*/
+@media screen and (min-width:900px)
+{
+  ul li img
+  {
+  width: 100%;  /*les images s'affichent complètement en largeur*/
+  }
+  /*définit un cadre autour de chaque imaage*/
+  ul li
+  { 
+    width:  100%;
+    display: inline-block;
+    margin:  5px;
+    padding:  7.5px;
+    background:  #3b3939;
+  }
+}
+
+/*si largeur<1000*/
+@media screen and (max-width:900px)
+{
+  ul li img
+  {
+    height: 100px;
+    width: 100%;
+  }
+
+  ul li
+  {
+  width:  100%;
+  display: inline-block;
+  margin:  5px;
+  padding:  7.5px;
+  background:  #3b3939;
+  }
+  
+   ul
+  {/*modifie le nombre d'image en colonne au format mobile*/
+
+  column-count: 4;/*nombre d'images par ligne */
+
+   column-gap: 10px;
+  }
+}
+
+/*modifie les mosaiques si largeur ecran<650px */
+@media screen and (max-width:650px)
+{
+  ul li{
+    padding: 6px;
+  }
+  ul
+  {
+
+    column-count: 3;/*nombre d'images par ligne */
+    column-gap: 5px;
+  }
+}
+
+/*rectangle qui contient toutes les informations de traitement*/
+.rect
+{
+    font-family: arial;
+    font-size: 24px;
+    margin: 25px;
+    width: 65%;
+    height: 550px;
+    border-radius: 50px;/*arrondi les bors du rectangle*/
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 80px;
+    background-color: rgba(0, 0, 0, 0.75);/*le 4eme argument permet de regler l'opacité entre 0 et 1*/
+}
+@media screen and (max-width:700px)
+{
+  .rect
+  {
+    margin-top: 25px;/*remonte le rectangle au format mobile*/
+  }
+  
+}
+
+/*définit la box dans laquelle on sélectionne le fichier à traiter*/
+.selection 
+{
+  width: 40%;
+  height: 12.5%;
+  background-color: rgba(0, 0, 0, 0.445);
+  position: absolute;
+  top: 5%;
+  left: 30%;
+  text-align: center;
+  color: white;
+  box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.25);
+}
+
+/*modifie la taille de la police de la div selection si l'écran est dimensionné entre 1100 et 1300px*/
+@media screen and (max-width:1300px)
+{
+  .selection
+  {
+    font-size: 20px;
+  }
+}
+
+/*entre 0 et 1100px de largeur - il suffit de mettre uniquement ce qui diffère avec la div selection du dessus SANS @media screen*/
+@media screen and (max-width:1100px) 
+{
+  .selection 
+  {
+    width: 75%;
+    height: 15%;
+    top: 5%;
+    left: 10%;
+    font-size: 20px ;
+}
+}
+
+/*permet de modifier l'apparence du curseur au survol lorsque l'on veut choisir un fichier*/
+.selection
+{
+  cursor: pointer;
+}
+
+/*dimensionne la div dans laquelle on sélectionne le traitement à appliquer */
+.traitement
+{
+  height:40%;
+  width: 90%;
+  position: absolute;
+  margin-top: 100px;
+  margin-right: 5%;
+  margin-left: 5%;
+  color: white;
+}
+
+.traitement h4
+{
+  margin-top: -0.5%;
+}
+
+@media screen and (min-width: 1130px)
+{
+  .traitement .text{
+    margin-top: 5px;
+    margin-left: 3%;
+    width: 40%;
+  }
+}
+
+@media screen and (max-width: 700px)
+{
+  .traitement
+  {
+    font-size: 20px;
+    
+  }
+  .traitement .text
+  {/*creer des espaces entre le text*/
+    margin-bottom: 2.5px;
+  }
+}
+
+/*adapte la largeur du texte selon la taille de l'ecran*/
+@media screen and (min-width: 850px) 
+{
+  .traitement .text
+  {
+    margin-top: 5px;
+    margin-left: 3%;
+    width: 60%;
+  }
+}
+.aide #choixF2
+{
+  font-size: 10px;
+}
+
+.traitement .aide
+{
+  font-size: 15px;
+  font-weight: bold;
+  font-style: italic;
+}
+
+/*cache automatiquement le texte d'aide*/
+.aide, .aide2
+{
+ display: none;
+}
+/*affiche le texte d'aide au survol de l'option concernée*/
+div.text:hover .aide
+{
+	display:inline-block;
+}
+
+input:checked ~ .aide2{
+  display: block;
+}
+
+/*bouton TRAITER*/
+
+/*dimensionne le bouton de traitement*/
+.rect .wrapper 
+{
+  margin-top: 3%;
+  margin-left: 33%;
+  width: 33%;
+}
+/*redimentionne le bouton de traitement si l'éran est réduit*/
+@media screen and (max-width:1000px)
+{
+  .rect .wrapper
+  {
+    margin-left: 25%;
+    width: 50%;
+  }
+}
+/*redimentionne le bouton de traitement si l'éran est réduit*/
+@media screen and (max-width:700px)
+{
+  .rect .wrapper
+  {
+    margin-left: 10%;
+    width: 80%;
+  }
+}
+
+.wrapper .btn
+{
+  width: 100%;
+  padding: 15px 0;
+  text-align: center;
+  cursor: pointer;
+  background: #ffffff;
+  position: relative;
+}
+
+.btn p
+{
+  color: #000000;
+  font-weight: 900;
+  font-size: 14px;
+  text-transform: uppercase;
+  font-family: arial;
+}
+
+.BorderTopBottom:before
+{
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 3px;
+  top: -6px;
+  left: -7px;
+  background: #ffffff;
+  transition: all 0.5s ease;
+}
+
+.BorderTopBottom:after
+{
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 3px;
+  bottom: -6px;
+  right: -7px;
+  background: #ffffff;
+  transition: all 0.5s ease;
+}
+
+.BorderLeftRight:before
+{
+  content: "";
+  position: absolute;
+  top: -4px;
+  left: -7px;
+  width: 3px;
+  height: 25px;
+  background: #ffffff;
+  transition: all 0.5s ease;
+}
+
+.BorderLeftRight:after
+{
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  right: -7px;
+  width: 3px;
+  height: 25px;
+  background: #ffffff;
+  transition: all 0.5s ease;
+}
+
+.btn:hover .BorderTopBottom:before,
+.btn:hover .BorderTopBottom:after
+{
+  width: 106%;/*184px*/
+  transition: all 0.5s ease;
+}
+.btn:hover .BorderLeftRight:before,
+.btn:hover .BorderLeftRight:after
+{
+  height: 110%;/*57px*/
+  transition: all 0.5s ease;
+}
+
+/*si l'écran fait au moins 1350px, correspond aux traits du bouton traiter */
+@media screen and (min-width:1350px)
+{
+  .btn:hover .BorderTopBottom:before,
+  .btn:hover .BorderTopBottom:after
+  {
+    width: 104%;/*184px*/
+    transition: all 0.5s ease;
+  }
+  .btn:hover .BorderLeftRight:before,
+  .btn:hover .BorderLeftRight:after 
+  {
+    height: 113%;/*57px*/
+    transition: all 0.5s ease;
+  }
+}
+
+/* media queries */
+@media screen and (max-width: 780px) 
+{
+  .wrapper 
+  {
+    width: 180px;
+  }
+  .wrapper .btn {
+    margin: 15px 0;
+  }
+}
+
+/*bouton telecharger*/
+.container { /*permet de dimensionner le bouton téléchargement selon la taille de la div contenante (donc de l'écran)*/
+  font-size: 35%;
+}
+
+/*si la taille de l'écran est inférieure à 700px, alors on mfixe la taille du bouton téléchargement à 40% 
+(comme au dessus mais avec 5% de moins pour que l'afficage soit plus agréable en cas d'affichage réduit)*/
+@media screen and (max-width:700px) 
+{
+  .container
+  {
+  font-size:30%;
+  }  
+}
+
+
+/*définit le style du bouton télécharger*/
+button
+{
+  background: none;
+  border: 4px solid rgb(255, 255, 255);
+  border-radius: 10px;
+  color: rgb(255, 255, 255);
+  display: block;
+  font-size: 1.6em;
+  font-weight: bold;
+  margin: 10px auto;
+  padding: 2em 6em;
+  position: relative;
+  text-transform: uppercase;
+  z-index: 1;
+}
+
+/*permet de définir une animation de remplissage en ce qui concerne le bouton télécharger + COMMENT les , :: ect...*/
+button,
+button::after
+{
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+/*modifie l'apparence du curseur au survol du lien pour télécharger l'image*/
+button a
+{
+  cursor: pointer;
+}
+
+button::before,
+button::after
+{
+  background: rgb(255, 255, 255);
+  content: "";
+  position: absolute;/*-1*/
+  z-index: -1;
+}
+
+/*modifie la couleur du texte "télécharger" en noir au survol du bouton*/
+button:hover
+{
+  color: #000000;
+}
+
+/*permet l'effet remplissage du bouton téléchargement*/
+.button2::after
+{
+  height: 100%;
+  left: 0;
+  top: 0;
+  width: 0;
+}
+.button2:hover:after
+{
+  width: 100%;
+}
+
+/*éviter que le "aucun fichier sélectionné" ne
+ dépasse quand on réduit la largeur de l'écran*/
+@media screen and (max-width:700px)
+{
+  input[type="file"]{
+    font-size: 10px;
+  }
+}
