@@ -40,33 +40,33 @@
       <form>
         <div class="selection">
           <label for="bouton">Choisir un fichier BMP à traiter :</label>
-          <input type="file" id="bouton" name="fichier1" accept="image/bmp">
+          <input type="file" id="bouton" name="fichier1" accept=".bmp">
         </div>
         <div class="traitement">
             <h4>Quel traitement ?</h4>
             <div class="text">
               <input type="checkbox" id="coding1" name="gris" value="ok">
-              <label for="nothing">Niveaux de gris</label>
+              <label>Niveaux de gris</label>
               <div class="aide">Transforme votre image en nuances de gris.</div>
             </div>
             <div class="text">
               <input type="checkbox" id="coding2" name="monochrome" value="ok">
-              <label for="nothing">Monochrome</label>
+              <label>Monochrome</label>
               <div class="aide">Transforme votre image en une seule couleur.</div>
             </div>
             <div class="text">
               <input type="checkbox" id="coding3" name="inversion" value="ok">
-              <label for="nothing">Inversion des couleurs</label>
+              <label>Inversion des couleurs</label>
               <div class="aide">Inverse les couleurs de votre image.</div>
             </div>
             <div class="text">
               <input type="checkbox" id="coding4" name="contour" value="ok">
-              <label for="nothing">Contour d'image</label>
+              <label>Contour d'image</label>
               <div class="aide">Affiche les contours de votre image.</div>
             </div>
             <div class="text">
               <input type="checkbox" id="coding5" name="fusion" value="ok">
-              <label for="nothing">Superposition d'images</label>
+              <label>Superposition d'images</label>
               <div class="aide">Fusionne deux images.</div>
               <div class="aide2">
                 <input type="file" id="choixF2" name="fichier2" accept="image/bmp ">
@@ -74,7 +74,8 @@
             </div>
           <div class="wrapper">
             <div class="btn">
-              <p>Commencer le traitement</p>
+              <label id="sub" for="submit">Commencer le traitement</label>
+              <input class="hide" id="submit" type="submit" value="Traiter">
               <span class="BorderTopBottom"></span>
               <span class="BorderLeftRight"></span>
             </div>

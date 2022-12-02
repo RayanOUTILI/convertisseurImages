@@ -32,7 +32,6 @@ h1
 {
   text-align: center;
   padding-bottom: 25px;
-  border-bottom: 1px solid #eee;
   display: block;
   margin-top: 25px;
   text-shadow:   -1px -1px 0 #000,  
@@ -304,7 +303,7 @@ input:checked ~ .aide2{
   position: relative;
 }
 
-.btn p
+.btn label
 {
   color: #000000;
   font-weight: 900;
@@ -487,4 +486,8 @@ button:hover
   input[type="file"]{
     font-size: 10px;
   }
+}
+
+.hide {
+  display: none !important;
 }
